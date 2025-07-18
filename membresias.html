@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla de Membresías | Latin Chaos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(120deg, #20242b 0%, #363d4f 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    h1 {
+      color: #ffe066;
+      font-size: 2.1rem;
+      margin: 44px 0 14px 0;
+      letter-spacing: 1px;
+      font-weight: 900;
+      text-shadow: 0 4px 22px #23232390;
+      text-align: center;
+    }
+    .tabla-container {
+      width: 98vw;
+      max-width: 1150px;
+      overflow-x: auto;
+      padding-bottom: 35px;
+    }
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: rgba(36,45,58,0.82);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px 0 rgba(30,60,120,0.16);
+      margin-bottom: 48px;
+      font-size: 1.02rem;
+      margin-top: 0;
+    }
+    thead tr {
+      background: rgba(29,38,70,0.93);
+    }
+    th, td {
+      padding: 13px 14px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    th {
+      color: #fff;
+      font-size: 1.04rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      border-bottom: 2.5px solid #ffe06666;
+    }
+    td {
+      color: #e8e8ee;
+      border-bottom: 1.5px solid #31374970;
+      font-weight: 500;
+      background: rgba(32,34,49,0.13);
+    }
+    td:first-child, th:first-child {
+      text-align: left;
+      font-weight: 700;
+      color: #fffbe6;
+      background: rgba(36,42,60,0.24);
+      border-right: 2.5px solid #31374960;
+      font-size: 1.03rem;
+      min-width: 220px;
+      max-width: 320px;
+    }
+
+    /* Colores de niveles */
+    .nivel-comun { color: #b5bac1; }
+    .nivel-nacido { color: #3dd36e; text-shadow: 0 0 8px #2be66755; }
+    .nivel-heraldo { color: #32c1ff; text-shadow: 0 0 8px #54e3ff88; }
+    .nivel-dios { color: #ffb85f; text-shadow: 0 0 10px #ffe06677; font-weight: 900;}
+    .precio { font-size: 0.93em; font-weight: bold; }
+
+    /* Destacar columna premium */
+    .col-dios {
+      background: linear-gradient(120deg, #ffcf6f77 50%, #fff1 120%);
+      box-shadow: 0 0 0 3px #ffe06625;
+      font-weight: bold;
+    }
+
+    /* Iconos */
+    .check { color: #7aff7a; font-size: 1.28em; font-weight: bold; }
+    .nocheck { color: #e75959; font-size: 1.19em; font-weight: bold;}
+    .badge { color: #ffe066; font-size: 1.18em; }
+    .vip { color: #ff84f3; font-weight: 700;}
+    .legendario { color: #ffe066; font-weight: 700; }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      h1 { font-size: 1.3rem; margin: 27px 0 11px 0;}
+      th, td { padding: 9px 6px; font-size: 0.92em;}
+      td:first-child, th:first-child { min-width: 120px; font-size: 0.99em;}
+      table { font-size: 0.97em;}
+    }
+    @media (max-width: 560px) {
+      h1 { font-size: 1.08rem; }
+      .tabla-container { padding: 0 2px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Comparativa de Membresías Latin Chaos</h1>
+  <div class="tabla-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Beneficio / Nivel</th>
+          <th class="nivel-comun">Común<br><span class="precio">Gratis</span></th>
+          <th class="nivel-nacido">Nacido del Caos<br><span class="precio">$8</span></th>
+          <th class="nivel-heraldo">Heraldo del Caos<br><span class="precio">$15</span></th>
+          <th class="nivel-dios col-dios">Dios del Caos<br><span class="precio">$22</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rol/etiqueta en Discord</td>
+          <td>Rol estándar</td>
+          <td>Rol exclusivo</td>
+          <td class="vip">Rol VIP exclusivo</td>
+          <td class="legendario">Rol supremo y único</td>
+        </tr>
+        <tr>
+          <td>Acceso a canales generales</td>
+          <td><span class="check">✔️</span></td>
+          <td><span class="check">✔️</span> + canales premium</td>
+          <td><span class="check">✔️</span> + más canales premium</td>
+          <td><span class="check">✔️</span> + todos los canales VIP</td>
+        </tr>
+        <tr>
+          <td>Emotes y stickers personalizados</td>
+          <td>Algunos básicos</td>
+          <td><span class="check">✔️</span> (exclusivos)</td>
+          <td><span class="check">✔️</span> (más exclusivos)</td>
+          <td><span class="check">✔️</span> (ultra exclusivos)</td>
+        </tr>
+        <tr>
+          <td>Badge/insignia en perfil</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="badge">✔️</span></td>
+          <td><span class="badge">✔️</span> (mejorada)</td>
+          <td><span class="badge">✔️</span> (legendaria)</td>
+        </tr>
+        <tr>
+          <td>Sorteos internos</td>
+          <td><span class="check">✔️</span> (participa)</td>
+          <td><span class="check">✔️</span> (1 ticket)</td>
+          <td><span class="check">✔️</span> (2 tickets)</td>
+          <td><span class="check">✔️</span> (5 tickets, prioridad)</td>
+        </tr>
+        <tr>
+          <td>Fondo minable (minería virtual)</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (tasa base)</td>
+          <td><span class="check">✔️</span> (+10% minado)</td>
+          <td><span class="check">✔️</span> (+25% minado, prioridad)</td>
+        </tr>
+        <tr>
+          <td>Insignias digitales coleccionables</td>
+          <td><span class="check">✔️</span> (algunas básicas)</td>
+          <td><span class="check">✔️</span> (más variedad)</td>
+          <td><span class="check">✔️</span> (todas + especiales)</td>
+          <td><span class="check">✔️</span> (todas + exclusivas VIP)</td>
+        </tr>
+        <tr>
+          <td>Colores personalizados de nombre</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (básico)</td>
+          <td><span class="check">✔️</span> (avanzado/degradados)</td>
+          <td><span class="check">✔️</span> (degradados animados)</td>
+        </tr>
+        <tr>
+          <td>Acceso a minijuegos</td>
+          <td><span class="check">✔️</span> (algunos)</td>
+          <td><span class="check">✔️</span> (más juegos)</td>
+          <td><span class="check">✔️</span> (todos + exclusivos)</td>
+          <td><span class="check">✔️</span> (juegos ultra VIP)</td>
+        </tr>
+        <tr>
+          <td>Participación en rankings</td>
+          <td><span class="check">✔️</span> (públicos)</td>
+          <td><span class="check">✔️</span></td>
+          <td><span class="check">✔️</span> (ranking especial)</td>
+          <td><span class="check">✔️</span> (VIP + destacados)</td>
+        </tr>
+        <tr>
+          <td>Recompensas diarias/semanales</td>
+          <td><span class="check">✔️</span> (base)</td>
+          <td><span class="check">✔️</span> (mayores)</td>
+          <td><span class="check">✔️</span> (+20% extra)</td>
+          <td><span class="check">✔️</span> (+40% extra)</td>
+        </tr>
+        <tr>
+          <td>Pins para mensajes destacados</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (limitado)</td>
+          <td><span class="check">✔️</span> (ilimitado)</td>
+          <td><span class="check">✔️</span> (prioridad máxima)</td>
+        </tr>
+        <tr>
+          <td>Acceso anticipado a funciones/eventos</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span></td>
+          <td><span class="check">✔️</span></td>
+        </tr>
+        <tr>
+          <td>Personalización de avatar/fondo/banners</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (básico)</td>
+          <td><span class="check">✔️</span> (avanzado)</td>
+          <td><span class="check">✔️</span> (animado/legendario)</td>
+        </tr>
+        <tr>
+          <td>Cambios de nickname/color</td>
+          <td>Limitado/manual</td>
+          <td><span class="check">✔️</span> (más veces)</td>
+          <td><span class="check">✔️</span> (ilimitado)</td>
+          <td><span class="check">✔️</span> (total libertad)</td>
+        </tr>
+        <tr>
+          <td>Lootboxes virtuales en tienda</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (acceso)</td>
+          <td><span class="check">✔️</span> (mejoradas)</td>
+          <td><span class="check">✔️</span> (legendarias exclusivas)</td>
+        </tr>
+        <tr>
+          <td>Saludo personalizado en streams/eventos</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span></td>
+          <td><span class="check">✔️</span> (más visible)</td>
+          <td><span class="check">✔️</span> (destacado en portada)</td>
+        </tr>
+        <tr>
+          <td>Mensajes fijos/destacados en el chat</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (limitado)</td>
+          <td><span class="check">✔️</span> (más veces)</td>
+          <td><span class="check">✔️</span> (siempre destacado)</td>
+        </tr>
+        <tr>
+          <td>Comandos sociales y diversión</td>
+          <td><span class="check">✔️</span> (básicos)</td>
+          <td><span class="check">✔️</span> (premium)</td>
+          <td><span class="check">✔️</span> (avanzados)</td>
+          <td><span class="check">✔️</span> (potenciados)</td>
+        </tr>
+        <tr>
+          <td>Acceso a podcasts/eventos de audio privados</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (algunos)</td>
+          <td><span class="check">✔️</span> (todos)</td>
+          <td><span class="check">✔️</span> (exclusivos VIP)</td>
+        </tr>
+        <tr>
+          <td>Participar en focus groups/testeo</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span></td>
+          <td><span class="check">✔️</span> (alpha access)</td>
+        </tr>
+        <tr>
+          <td>Consultas directas con admin/mods</td>
+          <td>Canal soporte común</td>
+          <td>Prioridad normal</td>
+          <td>Soporte rápido</td>
+          <td>Soporte express/privado</td>
+        </tr>
+        <tr>
+          <td>Votos en encuestas internas</td>
+          <td><span class="check">✔️</span> (1 voto)</td>
+          <td><span class="check">✔️</span> (1 voto)</td>
+          <td><span class="check">✔️</span> (2 votos)</td>
+          <td><span class="check">✔️</span> (3 votos)</td>
+        </tr>
+        <tr>
+          <td>Ranking especial de actividad/minería</td>
+          <td><span class="check">✔️</span> (base)</td>
+          <td><span class="check">✔️</span> (más visible)</td>
+          <td><span class="check">✔️</span> (ranking VIP)</td>
+          <td><span class="check">✔️</span> (ranking elite)</td>
+        </tr>
+        <tr>
+          <td>Acceso a canal VIP</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (canal VIP)</td>
+          <td><span class="check">✔️</span> (canal “Dios del Caos”)</td>
+        </tr>
+        <tr>
+          <td>Mensajes con efectos visuales</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (básico)</td>
+          <td><span class="check">✔️</span> (avanzado)</td>
+          <td><span class="check">✔️</span> (legendario)</td>
+        </tr>
+        <tr>
+          <td>Invitaciones a partidas privadas o torneos</td>
+          <td><span class="check">✔️</span> (eventos públicos)</td>
+          <td><span class="check">✔️</span> (más eventos)</td>
+          <td><span class="check">✔️</span> (exclusivos)</td>
+          <td><span class="check">✔️</span> (ultra VIP)</td>
+        </tr>
+        <tr>
+          <td>Alertas personalizadas en streams/eventos</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (básico)</td>
+          <td><span class="check">✔️</span> (efectos/sonidos)</td>
+          <td><span class="check">✔️</span> (gifs/animaciones)</td>
+        </tr>
+        <tr>
+          <td>Entradas extra para rifas/sorteos</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (+1 ticket)</td>
+          <td><span class="check">✔️</span> (+2 tickets)</td>
+          <td><span class="check">✔️</span> (+5 tickets)</td>
+        </tr>
+        <tr>
+          <td>Prioridad en cola minijuegos/sorteos</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (básico)</td>
+          <td><span class="check">✔️</span> (avanzado)</td>
+          <td><span class="check">✔️</span> (siempre primero)</td>
+        </tr>
+        <tr>
+          <td>Acceso a estadísticas avanzadas de cuenta</td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (básico)</td>
+          <td><span class="check">✔️</span> (avanzado)</td>
+          <td><span class="check">✔️</span> (total)</td>
+        </tr>
+        <tr>
+          <td><b>Torneos mensuales exclusivos y premios (USD)</b></td>
+          <td><span class="nocheck">✖️</span></td>
+          <td><span class="check">✔️</span> (participa)</td>
+          <td><span class="check">✔️</span> (participa)</td>
+          <td><span class="check">✔️</span> (participa + prior. invitación)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
